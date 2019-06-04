@@ -1,0 +1,29 @@
+#######################################
+# Syntax Coloring Map
+#######################################
+
+#######################################
+# NKP_ONE (KEYWORD1)
+#######################################
+
+NKP_ONE 	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+IO15	KEYWORD2
+set_oled_clear	KEYWORD2
+set_oled	KEYWORD2
+beep		KEYWORD2
+analog		KEYWORD2
+in		KEYWORD2
+in_pullup	KEYWORD2
+out		KEYWORD2
+Knob		KEYWORD2
+motor		KEYWORD2
+motor_s		KEYWORD2
+set_oled_S	KEYWORD2
+set_oled_show	KEYWORD2
+servo		KEYWORD2
+sw1		KEYWORD2
