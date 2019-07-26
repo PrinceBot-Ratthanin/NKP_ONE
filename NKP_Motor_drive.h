@@ -72,3 +72,7 @@ void MT(int speeda, int speedb,int time_speed){
   motor(2,speedb);
   delay(time_speed);
 }
+void ao(){
+  motor(1,0);
+  motor(2,0);
+}
