@@ -33,14 +33,16 @@ void setCalibrate(){
 
   for (uint8_t i = 0; i < _NumofSensor; i++)
   {
-    if(analogRead(_sensorPins[i]) > _max_sensor_values[i] || _max_sensor_values[i] > 4095 ){
-      _max_sensor_values[i] = analogRead(_sensorPins[i]);
+    if(analogRead(_sensorPins[i]) > _max_sensor_values[i] || _max_sensor_values[i] > 1023 ){
+      _max_sensor_values[i]  = analogRead(_sensorPins[i]);
+      if(_max_sensor_values[i] > 1023 )_max_sensor_values[i] = 1023;
     }
   }
   for (uint8_t i = 0; i < _NumofSensor; i++)
   {
     if(analogRead(_sensorPins[i]) < _min_sensor_values[i] || _min_sensor_values[i] == 0){
       _min_sensor_values[i] = analogRead(_sensorPins[i]);
+      if(_min_sensor_values[i] < 0) _min_sensor_values[i] = 0;
     }
   }
     
