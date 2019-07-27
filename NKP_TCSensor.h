@@ -1,14 +1,14 @@
-uint8_t * _sensorPins = nullptr;
-uint8_t  _NumofSensor = 0;
-uint16_t * _min_sensor_values = nullptr;
-uint16_t * _max_sensor_values = nullptr;
-uint16_t _lastPosition = 0;
-void setSensorPins(const uint8_t * _pins, uint8_t _NumofSensor_)
+int * _sensorPins = nullptr;
+int  _NumofSensor = 0;
+int * _min_sensor_values = nullptr;
+int * _max_sensor_values = nullptr;
+int _lastPosition = 0;
+void setSensorPins(const int * _pins, int _NumofSensor_)
 {
   _NumofSensor = _NumofSensor_;
-  _sensorPins = (uint8_t *)realloc(_sensorPins, sizeof(uint8_t) * _NumofSensor_);
-  _min_sensor_values = (uint16_t *)realloc(_min_sensor_values, sizeof(uint8_t) * _NumofSensor_);
-  _max_sensor_values = (uint16_t *)realloc(_max_sensor_values, sizeof(uint8_t) * _NumofSensor_);
+  _sensorPins = (int *)realloc(_sensorPins, sizeof(int) * _NumofSensor_);
+  _min_sensor_values = (int *)realloc(_min_sensor_values, sizeof(int) * _NumofSensor_);
+  _max_sensor_values = (int *)realloc(_max_sensor_values, sizeof(int) * _NumofSensor_);
   for (uint8_t i = 0; i < _NumofSensor_; i++)
   {
     _sensorPins[i] = _pins[i];
@@ -84,4 +84,3 @@ int readline()
   _lastPosition = avg / sum;
   return _lastPosition; 
 }
-//Cr. Pololu 
