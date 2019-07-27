@@ -53,7 +53,7 @@ int readline()
   long sum = 0;
   for (uint8_t i = 0; i < _NumofSensor; i++) 
   {
-    long value = map(analog(_sensorPins[i]), _min_sensor_values[i], _max_sensor_values[i], 1000, 0);                                                                            // จากนั้นก็เก็บเข้าไปยังตัวแป value
+    long value = map(analogRead(_sensorPins[i]), _min_sensor_values[i], _max_sensor_values[i], 1000, 0);                                                                            // จากนั้นก็เก็บเข้าไปยังตัวแป value
     if (value > 200) {
       onLine = true;
     }
