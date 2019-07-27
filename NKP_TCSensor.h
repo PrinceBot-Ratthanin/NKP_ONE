@@ -6,8 +6,8 @@ uint16_t _lastPosition = 0;
 void setSensorPins(const uint8_t * _pins, uint8_t _NumofSensor_)
 {
   _sensorPins = (uint8_t *)realloc(_sensorPins, sizeof(uint8_t) * _NumofSensor_);
-  _min_sensor_values = (uint16_t *)realloc(_min_sensor_values, sizeof(uint8_t) * _NumofSensor);
-  _max_sensor_values = (uint16_t *)realloc(_max_sensor_values, sizeof(uint8_t) * _NumofSensor);
+  _min_sensor_values = (uint16_t *)realloc(_min_sensor_values, sizeof(uint8_t) * _NumofSensor_);
+  _max_sensor_values = (uint16_t *)realloc(_max_sensor_values, sizeof(uint8_t) * _NumofSensor_);
   for (uint8_t i = 0; i < _NumofSensor_; i++)
   {
     _sensorPins[i] = _pins[i];
@@ -35,7 +35,7 @@ void setCalibrate(){
     if(analogRead(_sensorPins[i]) > _max_sensor_values[i] || _max_sensor_values[i] > 4095 ){
       _max_sensor_values[i] = analog(_sensorPins[i]);
     }
-    if(analogRead(_sensorPins[i]) < _min_sensor_values[i] || _min_sensor_values == 0){
+    if(analogRead(_sensorPins[i]) < _min_sensor_values[i] || _min_sensor_values[i] == 0){
       _min_sensor_values[i] = analog(_sensorPins[i]);
     }
   }
