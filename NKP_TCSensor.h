@@ -5,6 +5,7 @@ uint16_t * _max_sensor_values = nullptr;
 uint16_t _lastPosition = 0;
 void setSensorPins(const uint8_t * _pins, uint8_t _NumofSensor_)
 {
+  _NumofSensor = _NumofSensor_;
   _sensorPins = (uint8_t *)realloc(_sensorPins, sizeof(uint8_t) * _NumofSensor_);
   _min_sensor_values = (uint16_t *)realloc(_min_sensor_values, sizeof(uint8_t) * _NumofSensor_);
   _max_sensor_values = (uint16_t *)realloc(_max_sensor_values, sizeof(uint8_t) * _NumofSensor_);
@@ -12,7 +13,7 @@ void setSensorPins(const uint8_t * _pins, uint8_t _NumofSensor_)
   {
     _sensorPins[i] = _pins[i];
   }
-  _NumofSensor = _NumofSensor_;
+  
 }
 void setSensorMin(const uint16_t * _MinSensor)
 {
