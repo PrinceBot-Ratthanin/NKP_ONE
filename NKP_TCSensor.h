@@ -3,6 +3,7 @@ int  _NumofSensor = 0;
 int * _min_sensor_values = nullptr;
 int * _max_sensor_values = nullptr;
 int _lastPosition = 0;
+int _Sensitive  = 300;
 void setSensorPins(const int * _pins, int _NumofSensor_)
 {
   _NumofSensor = _NumofSensor_;
@@ -30,6 +31,10 @@ void setSensorMax(const uint16_t * _MaxSensor)
   {
     _max_sensor_values[i] = _MaxSensor[i];
   }
+}
+void setSensitive(const uint16_t * _SensorSensitive)
+{
+    _Sensitive = SensorSensitive;
 }
 void setCalibrate(){
 
@@ -63,7 +68,7 @@ int readline()
   for (uint8_t i = 0; i < _NumofSensor; i++) 
   {
     long value = map(analogRead(_sensorPins[i]), _min_sensor_values[i], _max_sensor_values[i], 1000, 0);                                                                            // จากนั้นก็เก็บเข้าไปยังตัวแป value
-    if (value > 200) {
+    if (value > _Sensitive) {
       onLine = true;
     }
     if (value > 50)
