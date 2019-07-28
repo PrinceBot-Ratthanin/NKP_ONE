@@ -76,3 +76,19 @@ void ao(){
   motor(1,0);
   motor(2,0);
 }
+void fd(int _Speed){
+  motor(1,_Speed);
+  motor(2,_Speed);
+}
+void bk(int _Speed){
+  motor(1, - _Speed);
+  motor(2, - _Speed);
+}
+void sl(int _Speed){
+  motor(1, - _Speed);
+  motor(2,  _Speed);
+}
+void sr(int _Speed){
+  motor(1,  _Speed);
+  motor(2, - _Speed);
+}
