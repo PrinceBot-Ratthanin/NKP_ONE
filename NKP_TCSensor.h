@@ -12,6 +12,8 @@ void setSensorPins(const int * _pins, int _NumofSensor_)
   for (uint8_t i = 0; i < _NumofSensor_; i++)
   {
     _sensorPins[i] = _pins[i];
+    _min_sensor_values[i] = 4095;
+    _max_sensor_values[i] = 0;
   }
   
 }
@@ -35,7 +37,7 @@ void setCalibrate(){
   {
     if(analogRead(_sensorPins[i]) > _max_sensor_values[i] || _max_sensor_values[i] > 1023 ){
       _max_sensor_values[i]  = analogRead(_sensorPins[i]);
-      if(_max_sensor_values[i] > 1023 )_max_sensor_values[i] = 1023;
+      if(_max_sensor_values[i] > 4095 )_max_sensor_values[i] = 4095;
     }
   }
   for (uint8_t i = 0; i < _NumofSensor; i++)
