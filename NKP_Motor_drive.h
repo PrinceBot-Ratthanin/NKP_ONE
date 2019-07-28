@@ -76,6 +76,11 @@ void ao(){
   motor(1,0);
   motor(2,0);
 }
+void aot(int _time){
+  motor(1,0);
+  motor(2,0);
+  delay(_time);
+}
 void fd(int _Speed){
   motor(1,_Speed);
   motor(2,_Speed);
