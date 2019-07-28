@@ -32,7 +32,7 @@ void setSensorMax(const uint16_t * _MaxSensor)
     _max_sensor_values[i] = _MaxSensor[i];
   }
 }
-void setSensitive(const uint16_t * _SensorSensitive)
+void setSensitive(const uint16_t  _SensorSensitive)
 {
     _Sensitive = _SensorSensitive;
 }
