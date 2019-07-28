@@ -6,6 +6,7 @@
 #include "NKP_IO.h"
 #include "NKP_Buzzer.h"
 #include "NKP_TCSensor.h"
+#include "NKP_OTA.h"
 #define M1A 2
 #define M1B 4
 #define M2A 16
@@ -13,6 +14,7 @@
 
 void NKP_ONE(){
 
+  Serial.begin(115200);
   display.begin(SSD1306_SWITCHCAPVCC, 0x3C);
   display.clearDisplay();
   pinMode(M1A,OUTPUT);
@@ -30,10 +32,21 @@ void NKP_ONE(){
   display.setTextSize(1);
   display.setTextColor(WHITE);
 }
+
 void IO15(){
   while(sw1() == 1){
     set_oled(0,0,"press sw1 ");
     set_oled(0,8,"to start ");
   }
   set_oled_clear();
+}
+void OTA_SW1(){
+	while(sw1() == 1){
+    ArduinoOTA.handle();
+    set_oled(0,0,"press sw1 ");
+    set_oled(0,8,"to start ");
+    delay(1);
+  }
+  set_oled_clear();
+
 }
