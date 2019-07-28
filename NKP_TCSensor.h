@@ -34,7 +34,7 @@ void setSensorMax(const uint16_t * _MaxSensor)
 }
 void setSensitive(const uint16_t * _SensorSensitive)
 {
-    _Sensitive = SensorSensitive;
+    _Sensitive = _SensorSensitive;
 }
 void setCalibrate(){
 
