@@ -5,6 +5,7 @@
 #include "NKP_Motor_drive.h"
 #include "NKP_IO.h"
 #include "NKP_Buzzer.h"
+#include "NKP_TCSensor.h"
 #define M1A 2
 #define M1B 4
 #define M2A 16
