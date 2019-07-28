@@ -7,3 +7,7 @@ int SW1(){
   pinMode(_sw,INPUT);
   return digitalRead(_sw);
 }
+int sw_ok(){
+  pinMode(_sw,INPUT);
+  return digitalRead(_sw);
+}
